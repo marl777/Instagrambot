@@ -1,4 +1,3 @@
-# InstaPy "Docs" : https://instapy.org/actions
 import os
 import sys
 import time
@@ -7,9 +6,10 @@ from instapy import InstaPy
 from instapy import smart_run
 
 # some useless design elements
-os.system("title Instagram")
+os.system("title InstaBot by marl")
 os.system("color c")
-print(40*"~", " InstaBot ", 40*"~", "\n\n")
+os.system("cls")
+print(40*"~", "[ InstaBot ]", 40*"~", "\n\n")
 loading = ["[■□□□□□□□□□]","[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]",
          "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
 
@@ -27,10 +27,10 @@ os.system("cls")
 
 # pause
 def pause():
-    time.sleep(0.2)
+    time.sleep(0.1)
 
 # menu
-print(40*"¯", " InstaBot ", 40*"¯", "\n\n")
+print(40*"¯", "[ InstaBot ]", 40*"¯", "\n\n")
 pause()
 print("-     unfollow : unfollow")
 pause()
@@ -71,6 +71,25 @@ pause()
 
 choise = input("   >>>   How can i help you  : ") # menu picker
 
+
 if choise == "unfollow":
-    print
-    setting = session.unfollow_users(amount=)
+    os.system("cls")
+    print(40*"¯", "[ InstaBot ]", 40*"¯", "\n\n")
+    print("         unfollow who the bot followed : 1")  # unfollow who InstaBot followed
+    print("         unfollow who the bot followed but only who dont follow back : 2") # unfollow who instabot followed but only who do not follow back
+    print("         unfollow users that dont follow back : 3") # unfollow users that dont follow back
+    print("         just unfollow : 4") # just unfollow
+    print("         back : 0 \n\n") # exit
+    choise = input("   >>>   How can i help you  : ") # menu picker
+    if choise == "0":
+        os.system("cls")
+        os.execv(sys.executable,
+         [sys.executable, os.path.join(sys.path[0], __file__)] + sys.argv[1:])  # restart program
+    if choise == "1":
+        os.system("cls")
+        a1 = session.unfollow_users(amount=amount, instapy_followed_enabled=True,
+                                    instapy_followed_param="all", style="RANDOM",
+                                    sleep_delay=64)
+
+
+    
