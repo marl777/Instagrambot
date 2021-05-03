@@ -1,7 +1,7 @@
 # Instagrambot
 InstaPy bot with pretty menu.
 ( not finished yet )
-will do in a few days
+will do in a few days or more xd
 
 
 
